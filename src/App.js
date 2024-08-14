@@ -1,15 +1,14 @@
 import './App.css';
-//import ComponentC from './hooks/useContext/ComponentC';
 import { createContext } from "react";
-import CounterTwo from './hooks/useReducer/CounterTwo';
-// import CounterOne from "./hooks/useReducer/CounterOne";
+import CounterThree from './hooks/useReducer/CounterThree';
+
 
 export const ThemeContext = createContext(null);
 
 function App() {
   return (
  <div>
-      <CounterTwo/>
+      <CounterThree/>
 </div>
   );
 }
