@@ -1,11 +1,11 @@
 import './App.css';
-import { createContext } from "react";
+import { createContext, useReducer} from "react";
 import ComponentA from './hooks/contextReducer/ComponentA';
 import ComponentB from './hooks/contextReducer/ComponentB';
 import ComponentC from './hooks/useContext/ComponentC'
 
 
-export const ThemeContext = createContext(null);
+export const CountContext = createContext();
 const initialState = 0
 const reducer = (state,action) => {
 
@@ -19,11 +19,14 @@ const reducer = (state,action) => {
 }
 
 function App() {
+  const [count,dispatch] = useReducer(reducer,initialState)
   return (
  <div>
+  <CountContext.Provider  value={{countState:count,countDispatch:dispatch}}>
       <ComponentA/>
       <ComponentB/>
       <ComponentC/>
+  </CountContext.Provider>
 </div>
   );
 }
